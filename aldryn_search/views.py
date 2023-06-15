@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from django.utils.translation import get_language_from_request
 from django.views.generic import ListView
 from django.views.generic.edit import FormMixin
@@ -33,7 +32,7 @@ class AldrynSearchView(FormMixin, ListView):
     template_name = 'aldryn_search/search_results.html'
 
     def get_form_kwargs(self):
-        kwargs = super(AldrynSearchView, self).get_form_kwargs()
+        kwargs = super().get_form_kwargs()
         kwargs['load_all'] = self.load_all
         kwargs['searchqueryset'] = self.get_search_queryset()
 
@@ -58,7 +57,7 @@ class AldrynSearchView(FormMixin, ListView):
     def get(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         self.form = self.get_form(form_class)
-        return super(AldrynSearchView, self).get(request, *args, **kwargs)
+        return super().get(request, *args, **kwargs)
 
     def get_queryset(self):
         queryset = self.form.search()
@@ -78,7 +77,7 @@ class AldrynSearchView(FormMixin, ListView):
         return self.search_queryset
 
     def get_context_data(self, **kwargs):
-        context = super(AldrynSearchView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['query'] = self.get_query(self.form)
         context['form'] = self.form
         if self.object_list.query.backend.include_spelling:

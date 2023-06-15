@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Dec 1, 2015
 
@@ -7,8 +6,7 @@ Created on Dec 1, 2015
 import copy
 
 from haystack.exceptions import NotHandled
-from haystack.signals import \
-    RealtimeSignalProcessor as BaseRealtimeSignalProcessor
+from haystack.signals import RealtimeSignalProcessor as BaseRealtimeSignalProcessor
 
 from .signals import add_to_index, remove_from_index
 
@@ -16,12 +14,12 @@ from .signals import add_to_index, remove_from_index
 class RealtimeSignalProcessor(BaseRealtimeSignalProcessor):
 
     def setup(self):
-        super(RealtimeSignalProcessor, self).setup()
+        super().setup()
         add_to_index.connect(self.handle_save)
         remove_from_index.connect(self.handle_delete)
 
     def teardown(self):
-        super(RealtimeSignalProcessor, self).teardown()
+        super().teardown()
         add_to_index.disconnect(self.handle_save)
         remove_from_index.disconnect(self.handle_delete)
 

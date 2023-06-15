@@ -1,16 +1,30 @@
-**Deprecated**
+.. image:: https://img.shields.io/badge/Continuation-Divio_Aldryn_Search-blue
+    :target: https://github.com/divio/aldryn-search
+    :alt: Continuation of the deprecated project "Divio Aldryn search"
 
-This project is no longer supported.
+.. image:: https://img.shields.io/pypi/v/djangocms-aldryn-search.svg
+    :target: https://pypi.python.org/pypi/djangocms-aldryn-search/
+    :alt: Pypi package
 
-Divio will undertake no further development or maintenance of this project. If you are interested in continuing to 
-develop it, use the fork functionality from GitHub. We are not able to transfer ownership of the repository to another 
-party.
+.. image:: https://img.shields.io/pypi/status/djangocms-aldryn-search.svg
+   :target: https://pypi.python.org/pypi/djangocms-aldryn-search
+   :alt: status
+
+.. image:: https://img.shields.io/pypi/pyversions/djangocms-aldryn-search.svg
+   :target: https://pypi.python.org/pypi/djangocms-aldryn-search
+   :alt: Python versions
+
+.. image:: https://img.shields.io/pypi/l/djangocms-aldryn-search.svg
+    :target: https://pypi.python.org/pypi/djangocms-aldryn-search/
+    :alt: license
 
 =============
 Aldryn Search
 =============
 
 This package provides a search indexes for easy Haystack 2 integration with django CMS.
+
+Continuation of the deprecated project `Divio Aldryn search <https://github.com/divio/aldryn-search>`_.
 
 Contributing
 ============

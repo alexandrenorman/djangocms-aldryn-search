@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from django.utils.translation import override
 
 from haystack import indexes
@@ -19,9 +18,9 @@ class AbstractIndex(indexes.SearchIndex):
         We set the backend to allow easy access for things like document search.
         """
         try:
-            self._backend = super(AbstractIndex, self).get_backend(using)
+            self._backend = super().get_backend(using)
         except AttributeError:
-            self._backend = super(AbstractIndex, self)._get_backend(using)
+            self._backend = super()._get_backend(using)
 
         self._backend_alias = using
         return self._backend
@@ -41,7 +40,7 @@ class AbstractIndex(indexes.SearchIndex):
 
         with override(current_language):
             request = self.get_request_instance(obj, current_language)
-            self.prepared_data = super(AbstractIndex, self).prepare(obj)
+            self.prepared_data = super().prepare(obj)
             self.prepared_data['text'] = self.get_search_data(obj, current_language, request)
             self.prepare_fields(obj, current_language, request)
             return self.prepared_data

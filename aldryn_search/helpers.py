@@ -1,24 +1,13 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.contrib.auth.models import AnonymousUser
 from django.template import Engine, RequestContext
 from django.test import RequestFactory
+from django.utils.encoding import force_str
 from django.utils.text import smart_split
 
 from cms.toolbar.toolbar import CMSToolbar
 
 from .conf import settings
-from .utils import (
-    _get_alias_from_language_func, _get_language_from_alias_func,
-    get_field_value, strip_tags,
-)
-
-
-try:
-    from django.utils.encoding import force_unicode
-except ImportError:
-    from django.utils.encoding import force_text as force_unicode
+from .utils import _get_alias_from_language_func, _get_language_from_alias_func, get_field_value, strip_tags
 
 
 EXCLUDED_PLUGINS = getattr(settings, 'ALDRYN_SEARCH_EXCLUDED_PLUGINS', [])
@@ -41,7 +30,7 @@ def _render_plugin(plugin, context, renderer=None):
 
 
 def get_cleaned_bits(data):
-    decoded = force_unicode(data)
+    decoded = force_str(data)
     stripped = strip_tags(decoded)
     return smart_split(stripped)
 

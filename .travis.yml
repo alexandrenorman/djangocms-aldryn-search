@@ -5,37 +5,22 @@ sudo: false
 
 matrix:
   include:
-    - python: 3.5
+    - python: 3.8
       env: TOX_ENV='flake8'
-    - python: 3.5
+    - python: 3.8
       env: TOX_ENV='isort'
-      # Django 1.11
-    - python: 2.7
-      env: DJANGO='dj111' CMS='cms34'
-    - python: 3.4
-      env: DJANGO='dj111' CMS='cms35'
-    - python: 3.5
-      env: DJANGO='dj111' CMS='cms36'
-    - python: 3.6
-      env: DJANGO='dj111' CMS='cms37'
-    # Django 2.1
-    - python: 3.6
-      env: DJANGO='dj21' CMS='cms36'
-    - python: 3.6
-      env: DJANGO='dj21' CMS='cms37'
-    # Django 2.2
-    - python: 3.6
-      env: DJANGO='dj22' CMS='cms37'
-    - python: 3.7
-      env: DJANGO='dj22' CMS='cms37'
+    - python: 3.8
+      env: CMS='cms311'
+    - python: 3.9
+      env: CMS='cms311'
+    - python: 3.10
+      env: CMS='cms311'
 
 install:
   - pip install coverage tox
-  - "if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then export PY_VER=py27; fi"
-  - "if [[ $TRAVIS_PYTHON_VERSION == '3.4' ]]; then export PY_VER=py34; fi"
-  - "if [[ $TRAVIS_PYTHON_VERSION == '3.5' ]]; then export PY_VER=py35; fi"
-  - "if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then export PY_VER=py36; fi"
-  - "if [[ $TRAVIS_PYTHON_VERSION == '3.7' ]]; then export PY_VER=py37; fi"
+  - "if [[ $TRAVIS_PYTHON_VERSION == '3.8' ]]; then export PY_VER=py38; fi"
+  - "if [[ $TRAVIS_PYTHON_VERSION == '3.9' ]]; then export PY_VER=py39; fi"
+  - "if [[ $TRAVIS_PYTHON_VERSION == '3.10' ]]; then export PY_VER=py310; fi"
   - "if [[ ${DJANGO}z != 'z' ]]; then export TOX_ENV=$PY_VER-$DJANGO-$CMS; fi"
 
 script:
