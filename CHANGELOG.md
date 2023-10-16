@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Fix tag links in CHANGELOG.
+
 ## [2.0.1] - 2023-10-16
 
 * Fix get_plugin_index_data in helpers.py for
@@ -165,8 +167,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.2] - 2013-08-07
 
 [unreleased]: https://github.com/CZ-NIC/djangocms-aldryn-search/compare/2.0.1...master
-[2.0.1]: https://github.com/CZ-NIC/djangocms-aldryn-search/compare/2.0.1...2.0.0
-[2.0.0]: https://github.com/CZ-NIC/djangocms-aldryn-search/compare/2.0.0...1.1.1
+[2.0.1]: https://github.com/CZ-NIC/djangocms-aldryn-search/compare/2.0.0...2.0.1
+[2.0.0]: https://github.com/CZ-NIC/djangocms-aldryn-search/compare/1.1.0...2.0.0
 [1.1.0]: https://github.com/divio/aldryn-search/compare/1.0.1...1.1.0
 [1.0.1]: https://github.com/divio/aldryn-search/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/divio/aldryn-search/compare/0.5.0...1.0.0
