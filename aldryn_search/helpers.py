@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.contrib.auth.models import AnonymousUser
 from django.template import Engine, RequestContext
 from django.test import RequestFactory
@@ -74,6 +75,13 @@ def get_plugin_index_data(base_plugin, request):
         except AttributeError:
             # django-cms>=3.4
             renderer = context.get('cms_content_renderer')
+
+        # Fix AccordionItemRenderMixin.render in djangocms_frontend/contrib/accordion/frameworks/bootstrap5.py.
+        # Fix TabItemRenderMixin.render in djangocms_frontend/contrib/tab/frameworks/bootstrap5.py.
+        if instance.plugin_type in ('AccordionItemPlugin', 'TabItemPlugin'):
+            context['parent'] = instance.parent.get_plugin_instance(admin=admin)[0]
+        if instance.plugin_type == 'TabItemPlugin':
+            context['parentloop'] = {'counter': 1}
 
         plugin_contents = _render_plugin(instance, context, renderer)
 

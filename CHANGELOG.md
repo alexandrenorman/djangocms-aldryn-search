@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2023-10-16
+
+* Fix get_plugin_index_data in helpers.py for
+  - AccordionItemRenderMixin.render in djangocms_frontend/contrib/accordion/frameworks/bootstrap5.py.
+  - TabItemRenderMixin.render in djangocms_frontend/contrib/tabs/frameworks/bootstrap5.py.
+
 ## [2.0.0] - 2023-07-18
 
- - Update code to python >= 3.7 and Django > 3.2.
+* Update code to python >= 3.7 and Django > 3.2.
 
 ## [1.1.0] - 2020-02-20
 
@@ -158,7 +164,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.3] - 2013-11-11
 ## [0.1.2] - 2013-08-07
 
-[unreleased]: https://github.com/CZ-NIC/djangocms-aldryn-search/compare/2.0.0...master
+[unreleased]: https://github.com/CZ-NIC/djangocms-aldryn-search/compare/2.0.1...master
+[2.0.1]: https://github.com/CZ-NIC/djangocms-aldryn-search/compare/2.0.1...2.0.0
 [2.0.0]: https://github.com/CZ-NIC/djangocms-aldryn-search/compare/2.0.0...1.1.1
 [1.1.0]: https://github.com/divio/aldryn-search/compare/1.0.1...1.1.0
 [1.0.1]: https://github.com/divio/aldryn-search/compare/1.0.0...1.0.1
