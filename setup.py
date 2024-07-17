@@ -12,6 +12,7 @@ REQUIREMENTS = [
     'django-spurl',
     'django-standard-form',
     'djangocms-aldryn-common',
+    'looseversion',
 ]
 
 

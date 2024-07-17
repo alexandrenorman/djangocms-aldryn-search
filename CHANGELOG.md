@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.2] - 2024-07-17
+
+* Fix for py312: Use LooseVersion from looseversion instead of distutils.
 * Fix tag links in CHANGELOG.
 
 ## [2.0.1] - 2023-10-16
