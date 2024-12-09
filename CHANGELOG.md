@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2024-12-09
+
+* Added support for Django CMS 4.1
+
+
 ## [2.0.2] - 2024-07-17
 
 * Fix for py312: Use LooseVersion from looseversion instead of distutils.
